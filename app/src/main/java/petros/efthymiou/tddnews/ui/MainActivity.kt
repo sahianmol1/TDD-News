@@ -1,15 +1,13 @@
 package petros.efthymiou.tddnews.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.view.get
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import dagger.hilt.android.AndroidEntryPoint
-import petros.efthymiou.tddnews.R
 import petros.efthymiou.tddnews.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
@@ -27,9 +25,47 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        Log.d(TAG, "onCreate: ")
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        Log.d(TAG, "onStart: ")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        Log.d(TAG, "onRestart: ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause: ")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: ")
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+    
+    companion object {
+        const val TAG = "MainActivityLifecycle"
     }
 }
