@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_news_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_news_list"
+        android:name="petros.efthymiou.tddnews.ui.newslist.NewsListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ui.newslist.NewsListFragment"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="257dp"
+        tools:listitem="@layout/item_news_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
